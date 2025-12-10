@@ -38,6 +38,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': {
+      redirect: 'https://nilyr.pro',
       prerender: true,
     },
     '/dashboard/**': {
