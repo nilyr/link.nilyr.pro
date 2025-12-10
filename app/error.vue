@@ -8,10 +8,9 @@ const props = defineProps({
 
 const route = useRoute()
 
-if (props.error?.statusCode === 404) {
-  if (!route.path.startsWith('/dashboard')) {
-    clearError({ redirect: 'https://nilyr.pro' })
-  }
+if (props.error?.statusCode === 404 && !route.path.startsWith('/dashboard')) {
+  clearError()
+  navigateTo('https://nilyr.pro', { external: true, replace: true })
 }
 </script>
 
